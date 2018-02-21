@@ -5,6 +5,6 @@ package org.kotliner.java.proxy;
  */
 public interface TestInterface {
 
-    int get();
+    void test();
 
 }

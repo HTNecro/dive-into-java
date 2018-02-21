@@ -8,8 +8,18 @@ import java.lang.reflect.Method;
  */
 public class DynamicInvocationHandler implements InvocationHandler{
 
+    private Object target;
+
+    public DynamicInvocationHandler(Object target) {
+        this.target = target;
+    }
+
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        return 42;
+        long start = System.currentTimeMillis();
+        method.invoke(target, args);
+        long end = System.currentTimeMillis();
+        System.out.println("Invoke time: " + (end - start));
+        return null;
     }
 }

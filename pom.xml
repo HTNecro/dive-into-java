@@ -11,8 +11,6 @@
     <modules>
         <module>java-collection</module>
         <module>java-bytecode</module>
-        <module>java-jvm</module>
-        <module>java-agent</module>
         <module>java-proxy</module>
     </modules>
 

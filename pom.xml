@@ -12,6 +12,7 @@
         <module>java-collection</module>
         <module>java-bytecode</module>
         <module>java-proxy</module>
+        <module>java-guava</module>
     </modules>
 
     <properties>

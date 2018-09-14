@@ -9,7 +9,11 @@ import net.bytebuddy.matcher.ElementMatchers;
  */
 public class ByteBuddyDemo {
 
-    public void makeClass() throws Exception {
+    public static void main(String[] args) throws Exception {
+        System.out.println(new ByteBuddyDemo().makeClass().hello());
+    }
+
+    public Test makeClass() throws Exception {
         Class<?> clazz = new ByteBuddy()
                 .subclass(Test.class)
                 .method(ElementMatchers.named("hello"))
@@ -17,12 +21,7 @@ public class ByteBuddyDemo {
                 .make()
                 .load(getClass().getClassLoader())
                 .getLoaded();
-        Test t = (Test) clazz.newInstance();
-        System.out.println(t.hello());
-    }
-
-    public static void main(String[] args) throws Exception {
-        new ByteBuddyDemo().makeClass();
+        return (Test) clazz.newInstance();
     }
 }
 

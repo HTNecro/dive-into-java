@@ -9,7 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>java-collection</artifactId>
+    <artifactId>java-instrument</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy</artifactId>
+            <version>1.7.9</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -21,11 +29,14 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>org.kotliner.java.collection.GroupingTest</mainClass>
                         </manifest>
+                        <manifestEntries>
+                            <Premain-Class>org.kotliner.java.instrument.AgentMain</Premain-Class>
+                        </manifestEntries>
                     </archive>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
 </project>

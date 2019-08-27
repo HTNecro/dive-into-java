@@ -1,4 +1,4 @@
-package org.kotliner.java.io;
+package org.kotliner.java.io.okhttp;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
